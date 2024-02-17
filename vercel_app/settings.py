@@ -77,7 +77,15 @@ WSGI_APPLICATION = 'vercel_app.wsgi.app'
 # Note: Django modules for using databases are not support in serverless
 # environments like Vercel. You can use a database over HTTP, hosted elsewhere.
 
-DATABASES = {}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'C:/Users/ntnem/OneDrive/Desktop/clone/grouppo_app/db.sqlite3',                      # Or path to database file if using sqlite3.
+        # 'USER': 'test',                      # Not used with sqlite3.
+        # 'PASSWORD': 'test',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        }
+}
 
 
 # Password validation
