@@ -21,4 +21,5 @@ urlpatterns = [
     path('activity/', views.activityPage, name="activity"),
 
     path('create-schedule/<str:pk>/', views.createSchedule, name="create-schedule"),
+   # path("static/styles/style.css/"),
 ]
