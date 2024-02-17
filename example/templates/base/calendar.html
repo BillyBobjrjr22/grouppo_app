@@ -1,0 +1,155 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+<html>
+<head>
+<style>
+h1 {text-align: center;}
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+
+.month {
+  padding: 70px 25px;
+  width: 100%;
+  background: #3f4156;
+  text-align: center;
+}
+
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: 	105	109	151;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color: 105	109	151;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #ffffff;
+  text-align: center;
+}
+
+.days {
+  padding: 10px 0;
+  background: #51546e;
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size:12px;
+  color: #ffffff;
+}
+
+.days li .active {
+  padding: 5px;
+  background: #1abc9c;
+  color: 	#51546e !important
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+  .weekdays li, .days li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+  .weekdays li, .days li {width: 12.5%;}
+  .days li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+  .weekdays li, .days li {width: 12.2%;}
+}
+</style>
+</head>
+
+<h1 style="font-size:20px;">Calendar</h1>
+
+<div class="month">      
+  <ul>
+    <a style="font-size:40px;" href="{% url 'calendar' yearMinus minus %}" class="prev">&#10094;</a>
+    <a style="font-size:40px;" href="{% url 'calendar' yearPlus plus %}" class="next">&#10095;</a>
+    <li>
+      <p style="font-size:30px">{{ month }}</p> 
+      <span style="font-size:30px">{{ year }}</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>Mo</li>
+  <li>Tu</li>
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+  <li>Su</li>
+</ul>
+
+<ul class="days">
+  <li><a>1</a></li>
+  <li><a>2</a></li>
+  <li><a>3</a></li>
+  <li><a>4</a></li>
+  <li><a>5</a></li>
+  <li><a>6</a></li>
+  <li><a>7</a></li>
+  <li><a>8</a></li>
+  <li><a>9</a></li>
+  <li><a>10</a></li>
+  <li><a>11</a></li>
+  <li><a>12</a></li>
+  <li><a>13</a></li>
+  <li><a>14</a></li>
+  <li><a>15</a></li>
+  <li><a>16</a></li>
+  <li><a>17</a></li>
+  <li><a>18</a></li>
+  <li><a>19</a></li>
+  <li><a>20</a></li>
+  <li><a>21</a></li>
+  <li><a>22</a></li>
+  <li><a>23</a></li>
+  <li><a>24</a></li>
+  <li><a>25</a></li>
+  <li><a>26</a></li>
+  <li><a>27</a></li>
+  <li><a>28</a></li>
+  <li><a>29</a></li>
+  <li><a>30</a></li>
+  <li><a>31</a></li>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+</ul>
+
+</html>
+{% endblock content %}

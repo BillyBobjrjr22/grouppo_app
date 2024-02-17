@@ -1,0 +1,72 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<main class="layout layout--3">
+  <div class="container">
+
+    <!-- Topics Start -->
+    {% include 'base/topics_component.html' %}
+
+    <!-- Topics End -->
+
+    <!-- Room List Start -->
+    <div class="roomList">
+      <div class="mobile-menu">
+        <form action="{% url 'home' %}" method="GET" class="header__search">
+          <label>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+              <title>search</title>
+              <path
+                d="M32 30.586l-10.845-10.845c1.771-2.092 2.845-4.791 2.845-7.741 0-6.617-5.383-12-12-12s-12 5.383-12 12c0 6.617 5.383 12 12 12 2.949 0 5.649-1.074 7.741-2.845l10.845 10.845 1.414-1.414zM12 22c-5.514 0-10-4.486-10-10s4.486-10 10-10c5.514 0 10 4.486 10 10s-4.486 10-10 10z">
+              </path>
+            </svg>
+            <input name="q" placeholder="Search for posts" />
+          </label>
+        </form>
+        <div class="mobile-menuItems">
+          <a class="btn btn--main btn--pill" href="{% url 'topics' %}">Guide</a>
+          <a class="btn btn--main btn--pill" href="{% url 'activity' %}">Recent Activities</a>
+        </div>
+      </div>
+
+      <div class="roomList__header">
+        <div>
+          <h2 style="font-size:30px">Planning Rooms:</h2>
+          <h3 style="font-size:20px">Click on Group Name to Join!</h3>
+          <p>{{room_count}} Rooms available</p>
+        </div>
+
+        <a class="btn btn--main" href="{% url 'create-room' %}">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+            <title>add</title>
+            <path
+              d="M16.943 0.943h-1.885v14.115h-14.115v1.885h14.115v14.115h1.885v-14.115h14.115v-1.885h-14.115v-14.115z">
+            </path>
+          </svg>
+          Create Room
+        </a>
+      </div>
+
+      {% include 'base/feed_component.html' %}
+
+      
+
+    </div>
+    <!-- Room List End -->
+
+    <!-- Activities Start -->
+    {% include 'base/activity_component.html' %}
+
+    <!-- Activities End -->
+  </div>
+</main>
+<p></p>
+<h5 style="font-size: 40px; text-align: center;"><u>About Us</u></h5>
+<p style="text-align: center;">Grouppo is a meeting planner website that facilitates group scheduling and decision-making. We make it easy for you to schedule get-togethers with friends, </p><p style="text-align: center;">
+  family, or colleagues. Input available dates, times, and the place to meet, and our site will pick what works best for everyone. Our goal is to simplify the process of scheduling </p><p style="text-align: center;">
+  and to make it more enjoyable for you. We understand the hassle of organizing a meeting, and we want to help you make it a seamless experience. Our unique feature allows </p><p style="text-align: center;">
+  people to join rooms to participate in the scheduling process, making it even easier to find a time and place that works for everyone. We </p><p style="text-align: center;">
+  are committed to  making your life easier by taking the stress out of scheduling meetings. Let us help you plan your next gathering! </p><p style="text-align: center;">
+  Co-created by Nathan Nemetz & Jesse Rehrer </p><br /><br></p>
+{% endblock %}
